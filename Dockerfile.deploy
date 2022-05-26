@@ -5,5 +5,5 @@ RUN gem install bundler
 RUN bundle install
 RUN bundle exec jekyll build
 
-FROM nginx:latest
+FROM nginx:stable
 COPY --from=builder /src/_site/ /usr/share/nginx/html/
